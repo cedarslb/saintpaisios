@@ -53,6 +53,12 @@
 	font-size: medium;
 }
 
+/* Search Box Alignment Fix */
+#nav .search form div {
+    display: flex;
+    align-items: center;
+}
+
 /* Monthly Calendar Thumbnail Section */
 .monthly-calendar-box {
     background: #ffffff;
@@ -166,10 +172,11 @@
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
                 <div class="search">
-                    <form action="register.php" method="post">
+                    <form action="https://www.google.com/search" method="get" target="_blank">
                         <div>
-                            <input name="text" type="text" class="search-field" alt="Search site:" />
-                            <input name="submit" type="image" class="search-submit" value="search" src="img/search.png" />
+                            <input type="hidden" name="sitesearch" value="saintpaisios.net" />
+                            <input name="q" type="text" class="search-field" placeholder="Search site..." alt="Search site:" />
+                            <input name="submit" type="image" class="search-submit" value="search" src="img/search.png" alt="Search" />
                         </div>
                     </form>
                 </div>

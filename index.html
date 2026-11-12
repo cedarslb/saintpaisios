@@ -269,12 +269,12 @@ $(document).ready(function() {
         <div id="sidebar">
           <div class="divider"></div>
                    <h3 class="replace">Our Church on Facebook</h3>
-          <p class="twitter-feed">Check out our Facbook page <a href="https://www.facebook.com/StPaisios" target="_blank">https://goo.gl/vTfUoA</a></p>
+          <p class="twitter-feed">Check out our Facebook page <a href="https://www.facebook.com/StPaisios" target="_blank">https://goo.gl/vTfUoA</a></p>
         
           <div class="divider"></div> 
           
-          <!-- Bulletproof Facebook Iframe -->
-          <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FStPaisios&tabs=timeline&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true" width="340" height="500" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+          <!-- Curator.io Feed <div> goes here, inside the narrow sidebar -->
+          <div id="curator-feed-default-feed-layout"><a href="https://curator.io" target="_blank" class="crt-logo crt-tag">Powered by Curator.io</a></div>
 
         </div>
       </div>
@@ -325,6 +325,17 @@ $(document).ready(function() {
     <div class="clear"></div>
   </div>
 </div>
+
+<!-- Curator.io script placed at the bottom for better performance -->
+<script type="text/javascript">
+/* curator-feed-default-feed-layout */
+(function(){
+var i,e,d=document,s="script";i=d.createElement("script");i.async=1;i.charset="UTF-8";
+i.src="https://cdn.curator.io/published/ae8410e2-fcd4-4319-aa9c-97a161359a59.js";
+e=d.getElementsByTagName(s)[0];e.parentNode.insertBefore(i, e);
+})();
+</script>
+
 <script type="text/javascript" src="https://counter.websiteout.com/js/5/6/3000/0"></script>
 </body>
 </html>

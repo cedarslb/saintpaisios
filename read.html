@@ -15,95 +15,83 @@
             justify-content: center;
             align-items: center;
             min-height: 100vh;
+            box-sizing: border-box;
         }
-
         .widget-card {
             background: #ffffff;
             border: 1px solid #e1e4e8;
             border-radius: 12px;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
             width: 100%;
-            max-width: 650px;
+            max-width: 800px;
             padding: 30px;
             box-sizing: border-box;
         }
-
         .widget-header {
             border-bottom: 2px solid #8b0000;
             padding-bottom: 15px;
             margin-bottom: 20px;
         }
-
         .widget-header h2 {
             margin: 0;
             color: #8b0000;
             font-size: 1.5rem;
         }
-
-        /* Styling for the injected readings content */
-        .widget-content p {
-            line-height: 1.6;
-            margin-bottom: 1em;
+        .antiochian-liturgics iframe {
+            display: block;
+            width: 100%;
+            height: 950px;
+            border: 0;
+            border-radius: 8px;
+            background: #fff;
         }
-
-        .widget-content h3, .widget-content h4 {
-            color: #2c3e50;
-            margin-top: 20px;
-        }
-
-        .loading-state {
+        .antiochian-credit {
+            margin: 12px 0 0;
             text-align: center;
+            font: 13px/1.5 Arial, sans-serif;
             color: #666;
-            font-style: italic;
-            padding: 20px 0;
+        }
+        .antiochian-credit a {
+            color: inherit;
+        }
+        @media (max-width: 768px) {
+            .antiochian-liturgics iframe {
+                height: 1300px;
+            }
+            body {
+                padding: 15px 10px;
+            }
+            .widget-card {
+                padding: 15px;
+            }
         }
     </style>
 </head>
 <body>
 
-    <div class="widget-card">
-        <div class="widget-header">
-            <h2>Daily Liturgical Readings</h2>
-        </div>
-        
-        <div id="antiochian-readings-widget" class="widget-content">
-            <div class="loading-state">Loading today's readings from the Archdiocese...</div>
-        </div>
+<div class="widget-card">
+    <div class="widget-header">
+        <h2>Daily Liturgical Readings</h2>
     </div>
+    
+    <div class="antiochian-liturgics">
+      <iframe
+        src="https://www.antiochian.org/liturgicday"
+        title="Daily Liturgical Readings - Antiochian Orthodox Christian Archdiocese"
+        loading="lazy"
+        allowfullscreen>
+      </iframe>
 
-    <script>
-        // Target the live Antiochian readings URL
-        const targetUrl = encodeURIComponent('https://www.antiochian.org/epistleliturgicday/');
-        // Using AllOrigins CORS proxy to fetch the live HTML safely in static environments
-        const proxyUrl = `https://api.allorigins.win/get?url=${targetUrl}`;
-
-        fetch(proxyUrl)
-            .then(response => {
-                if (!response.ok) throw new Error('Network response was not ok');
-                return response.json();
-            })
-            .then(data => {
-                const parser = new DOMParser();
-                const doc = parser.parseFromString(data.contents, 'text/html');
-                
-                // Isolate the main reading content block from the fetched page structure
-                const content = doc.querySelector('main') || doc.querySelector('.region-content') || doc.querySelector('.content');
-
-                if (content) {
-                    // Clean up unwanted navigation bars, footers, or headers if present
-                    content.querySelectorAll('nav, footer, header, .sidebar').forEach(el => el.remove());
-                    
-                    // Inject the cleaned reading content into your page widget
-                    document.getElementById('antiochian-readings-widget').innerHTML = content.innerHTML;
-                } else {
-                    document.getElementById('antiochian-readings-widget').innerHTML = '<p>Could not isolate the reading content container.</p>';
-                }
-            })
-            .catch(error => {
-                console.error('Error fetching live readings:', error);
-                document.getElementById('antiochian-readings-widget').innerHTML = '<p>Unable to load daily readings at this time. Please check back later.</p>';
-            });
-    </script>
+      <p class="antiochian-credit">
+        Daily liturgical information provided by
+        <a href="https://www.antiochian.org/liturgicday"
+           target="_blank"
+           rel="noopener noreferrer">
+          Antiochian Orthodox Christian Archdiocese of North America
+        </a>
+      </p>
+    </div>
+</div>
 
 </body>
 </html>

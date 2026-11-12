@@ -9,7 +9,6 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments)};
   gtag('js', new Date());
-
   gtag('config', 'UA-107042131-1');
 </script>
 
@@ -23,9 +22,11 @@
 <script type="text/javascript" src="fancybox/jquery.fancybox-1.3.0.pack.js"></script>
 <script type="text/javascript">
 	$(document).ready(function() {
-		$("ul.gallery li a").fancybox({
-			'titleShow'     : true,
+        /* Grouping by 'rel' attribute allows users to click 'next' through an album */
+		$("ul.photo-grid li a").fancybox({
+			'titleShow'     : false,
 			'transitionIn'  : 'elastic',
+            'transitionOut' : 'elastic',
 			'titlePosition' : 'inside'
 		});
 	});
@@ -42,7 +43,6 @@
 <script type="text/javascript" src="js/hoverIntent.js"></script>
 <script type="text/javascript" src="js/superfish.js"></script>
 <script type="text/javascript">
-		// initialise plugins
 		jQuery(function(){
 			jQuery('ul.sf-menu').superfish();
 		});
@@ -68,56 +68,81 @@
     align-items: center;
 }
 
-/* Facebook Gallery Card (#ebe5d5 Parchment Background) */
-.fb-gallery-card {
+/* Gallery Card (#ebe5d5 Parchment Background) */
+.local-gallery-card {
     background-color: #ebe5d5;
     border: 1px solid #d5ccb6;
     border-radius: 8px;
-    padding: 25px;
+    padding: 30px;
     margin-bottom: 25px;
-    text-align: center;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
-.fb-gallery-header {
+.gallery-header {
     border-bottom: 2px solid #8b0000;
     padding-bottom: 12px;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
+    text-align: center;
 }
 
-.fb-gallery-header h2 {
+.gallery-header h2 {
     margin: 0 0 6px 0;
     color: #8b0000;
     font-size: 1.4rem;
 }
 
-.fb-gallery-header p {
+.gallery-header p {
     margin: 0;
     color: #444;
     font-size: 14px;
 }
 
-.fb-iframe-wrapper {
-    display: flex;
-    justify-content: center;
-    margin: 0 auto 20px auto;
+/* Album Sections & CSS Grid */
+.album-section {
+    margin-bottom: 40px;
+}
+
+.album-section h3 {
+    color: #8b0000;
+    font-size: 1.2rem;
+    border-bottom: 1px dashed #d5ccb6;
+    padding-bottom: 8px;
+    margin-bottom: 15px;
+}
+
+ul.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 15px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+ul.photo-grid li {
+    margin: 0;
+    padding: 0;
+    background: none;
+}
+
+ul.photo-grid li a {
+    display: block;
     overflow: hidden;
-}
-
-.fb-albums-btn {
-    display: inline-block;
-    background-color: #8b0000;
-    color: #ffffff !important;
-    text-decoration: none;
-    padding: 10px 22px;
     border-radius: 6px;
-    font-weight: bold;
-    font-size: 14px;
-    transition: background-color 0.2s ease;
+    border: 2px solid #8b0000;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.1);
 }
 
-.fb-albums-btn:hover {
-    background-color: #660000;
+ul.photo-grid li a img {
+    display: block;
+    width: 100%;
+    height: 140px;
+    object-fit: cover; /* Ensures thumbnails are perfectly square/uniform without stretching */
+    transition: transform 0.3s ease;
+}
+
+ul.photo-grid li a:hover img {
+    transform: scale(1.08);
 }
 
 /* Centered Footer Styling */
@@ -180,30 +205,72 @@
             <div id="main-content">
                 <h1 class="replace">Photo Gallery</h1>
 
-                <div class="fb-gallery-card">
-                    <div class="fb-gallery-header">
-                        <h2>Parish Photo Albums &amp; Updates</h2>
-                        <p>Browse our latest parish photos and community events directly from our official Facebook page.</p>
+                <div class="local-gallery-card">
+                    <div class="gallery-header">
+                        <h2>Parish Photo Albums</h2>
+                        <p>Select any thumbnail to view the full-size image.</p>
                     </div>
 
-                    <div class="fb-iframe-wrapper">
-                        <iframe 
-                            src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FStPaisios&tabs=timeline&width=500&height=700&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=false" 
-                            width="500" 
-                            height="700" 
-                            style="border:1px solid #d5ccb6; border-radius:6px; overflow:hidden; background:#ffffff;" 
-                            scrolling="no" 
-                            frameborder="0" 
-                            allowfullscreen="true" 
-                            allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
-                        </iframe>
+                    <!-- ALBUM 1: Sunday of Orthodoxy -->
+                    <div class="album-section">
+                        <h3>Sunday of Orthodoxy</h3>
+                        <ul class="photo-grid">
+                            <!-- Ensure the rel="orthodoxy" is the same for all images in this album to enable next/prev arrows -->
+                            <li>
+                                <a href="img/13_Sunday of Orthodoxy/photo_0001.jpg" rel="orthodoxy">
+                                    <img src="img/13_Sunday of Orthodoxy/photo_0001.jpg" alt="Sunday of Orthodoxy" />
+                                </a>
+                            </li>
+                            <li>
+                                <a href="img/13_Sunday of Orthodoxy/photo_0002.jpg" rel="orthodoxy">
+                                    <img src="img/13_Sunday of Orthodoxy/photo_0002.jpg" alt="Sunday of Orthodoxy" />
+                                </a>
+                            </li>
+                            <li>
+                                <a href="img/13_Sunday of Orthodoxy/photo_0003.jpg" rel="orthodoxy">
+                                    <img src="img/13_Sunday of Orthodoxy/photo_0003.jpg" alt="Sunday of Orthodoxy" />
+                                </a>
+                            </li>
+                            <!-- Add more <li> items here for this album -->
+                        </ul>
                     </div>
 
-                    <div>
-                        <a href="https://www.facebook.com/StPaisios/photos_albums" target="_blank" rel="noopener noreferrer" class="fb-albums-btn">
-                            View All Photo Albums on Facebook &rarr;
-                        </a>
+                    <!-- ALBUM 2: Father Ambrose Ordination -->
+                    <div class="album-section">
+                        <h3>Father Ambrose Ordination</h3>
+                        <ul class="photo-grid">
+                            <li>
+                                <a href="img/06_Father Ambrose Ordination at St. Raphael/photo_0001.jpg" rel="ordination">
+                                    <img src="img/06_Father Ambrose Ordination at St. Raphael/photo_0001.jpg" alt="Ordination" />
+                                </a>
+                            </li>
+                            <li>
+                                <a href="img/06_Father Ambrose Ordination at St. Raphael/photo_0002.jpg" rel="ordination">
+                                    <img src="img/06_Father Ambrose Ordination at St. Raphael/photo_0002.jpg" alt="Ordination" />
+                                </a>
+                            </li>
+                            <!-- Add more <li> items here for this album -->
+                        </ul>
                     </div>
+
+                    <!-- ALBUM 3: Pascha 2019 -->
+                    <div class="album-section">
+                        <h3>Pascha 2019</h3>
+                        <ul class="photo-grid">
+                            <li>
+                                <a href="img/03_Pascha 2019/photo_0001.jpg" rel="pascha">
+                                    <img src="img/03_Pascha 2019/photo_0001.jpg" alt="Pascha" />
+                                </a>
+                            </li>
+                            <li>
+                                <a href="img/03_Pascha 2019/photo_0002.jpg" rel="pascha">
+                                    <img src="img/03_Pascha 2019/photo_0002.jpg" alt="Pascha" />
+                                </a>
+                            </li>
+                            <!-- Add more <li> items here for this album -->
+                        </ul>
+                    </div>
+
                 </div>
 
             </div>

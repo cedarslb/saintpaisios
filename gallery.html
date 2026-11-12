@@ -91,13 +91,13 @@ $(document).ready(function() {
         
         for(var j = 0; j < album.images.length; j++) {
             var num = album.images[j];
-            // Format number to 4 digits (e.g. 1 becomes 0001)
             var paddedNum = (num < 10 ? "000" : "00") + num;
             var imgPath = 'img/' + album.folder + '/photo_' + paddedNum + '.jpg';
             
             galleryHTML += '<li>';
             galleryHTML += '<a href="' + imgPath + '" rel="' + album.rel + '">';
-            galleryHTML += '<img src="' + imgPath + '" alt="' + album.title + '" loading="lazy" />';
+            // The onerror attribute below automatically removes the <li> if the image is missing
+            galleryHTML += '<img src="' + imgPath + '" alt="' + album.title + '" loading="lazy" onerror="this.closest(\'li\').remove();" />';
             galleryHTML += '</a></li>';
         }
         galleryHTML += '</ul></div>';
@@ -294,7 +294,6 @@ ul.photo-grid li a:hover img {
                         <p>Select any thumbnail to view the full-size image.</p>
                     </div>
 
-                    <!-- The Javascript above will inject all 100+ images inside this empty div -->
                     <div id="dynamic-gallery"></div>
 
                 </div>

@@ -7,10 +7,22 @@
 <link rel="stylesheet" type="text/css" href="css/style.css" />
 <link rel="stylesheet" type="text/css" href="css/superfish.css" media="screen"/>
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+
+<!-- Curator.io script moved to head to prevent legacy script conflicts -->
+<script type="text/javascript">
+/* curator-feed-default-feed-layout */
+(function(){
+var i,e,d=document,s="script";i=d.createElement("script");i.async=1;i.charset="UTF-8";
+i.src="https://cdn.curator.io/published/ae8410e2-fcd4-4319-aa9c-97a161359a59.js";
+e=d.getElementsByTagName(s)[0];e.parentNode.insertBefore(i, e);
+})();
+</script>
+
 <!--PNGfix-->
 <script type="text/javascript" src="js/jquery.pngFix.pack.js"></script>
 <script type="text/javascript"> 
-    $(document).ready(function(){$(document).pngFix(); 
+    $(document).ready(function(){ 
+        $(document).pngFix(); 
     }); 
 </script> 
 <!--Superfish nav bar-->
@@ -26,7 +38,8 @@
 <script type="text/javascript" src="js/easySlider1.5.js"></script>
 <script type="text/javascript" charset="utf-8">
 // <![CDATA[
-$(document).ready(function(){$("#slider").easySlider({
+$(document).ready(function(){	
+	$("#slider").easySlider({
 		auto: true, 
 		continuous: true
 	});	
@@ -112,4 +125,137 @@ $(document).ready(function() {
 <div id="wrapper">
     <div id="main">
         <div id="header">
-            <div id="logo" style="width: 456px"><img src="img/logo.png" width="370" height="45" alt="
+            <div id="logo" style="width: 456px"><img src="img/logo.png" width="370" height="45" alt="Logo" longdesc="site log" /></div>
+            <ul id="menu">
+                <li><a href="#">Quick Links</a>
+                  <ul>
+                    <li> <a href="contact.html">Contact</a> </li>
+                  </ul>
+                </li>
+                <li><a href="#" id="button">Service Times</a> </li>
+            </ul>
+            <div id="nav">
+                <ul class="sf-menu">
+                    <li> <a href="index.html">Home</a> </li>
+                    <li> <a href="home2.html">Who We Are</a> </li>
+                    <li class="current"> <a href="video.html">Videos</a></li>
+                    <li> <a href="gallery.html">Gallery</a></li>
+                    <li> <a href="calendar.html">Daily Readings/Calendar</a> </li>
+                    <li> <a href="contact.html">Contact</a> </li>
+                </ul>
+                <div class="search">
+                  <form action="https://www.google.com/search" method="get" target="_blank">
+                    <input type="hidden" name="as_sitesearch" value="saintpaisios.net" />
+                    <input name="q" type="text" class="search-field" placeholder="Search site..." />
+                    <input type="image" class="search-submit" src="img/search.png" alt="Search" />
+                  </form>
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <!--header end-->
+        <div id="content">
+            <div id="content-left">
+                <!-- slide-container -->
+                <div class="slide-container">
+                    <div id="slider">
+                        <ul>
+                          <li class="img_right"><a href="#"> <img src="img/videoh.png" alt="Where We Began…" /> </a></li>
+                        </ul>
+                    </div>
+                </div>
+                <ul class="tabs">
+                    <li><a href="#tab1">Videos</a></li>                
+                </ul>
+                <!-- tab-container -->
+                <div class="tab_container">
+                    <!-- tab-content begin -->
+                    <div id="tab1" class="tab_content">
+                        <ul class="tab-post">
+                            <li>
+                                <!-- Video width set to 100% to prevent layout breakage -->
+                                <p><iframe width="100%" height="315" src="https://www.youtube.com/embed/vbsTecjXAkc?si=ZaGnKfNB5I24FDnf" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></p>
+                            </li>
+                        </ul>
+                    </div>
+                  <!-- tab-content end -->
+                </div>
+            </div>
+            <div id="content-right">
+                <!-- Headline Box -->
+                <div class="headline_box">
+                    <div class="middle">
+                        <h3 class="replace">Upcoming Worship</h3>
+                        <p><span class="auto-style5"><strong><em>L</em></strong></span><strong><em>ooking
+                        </em></strong>for a Christ-centered Church and Worship?
+                            <strong>Get to know the Original: Saturdays Vespers Services 5:00 p.m. </strong></p>
+            <p><strong>Sundays Divine Liturgy 10:00 a.m<br />
+            @</strong>
+                        8621 S Interstate 8 Frontage Rd, Yuma, AZ .
+                        <span class="auto-style2"><em><strong>928-503-4018</strong></em></span></p>
+                    </div>
+                    <div class="bottom"></div>
+                </div>
+                <div id="sidebar">
+                    <div class="divider"></div>
+                    <h3 class="replace">Our Church on Facebook</h3>
+                    <p class="twitter-feed">Check out our Facebook page <a href="https://www.facebook.com/StPaisios" target="_blank">https://goo.gl/vTfUoA</a></p>
+                    <div class="divider"></div>
+                    
+                    <!-- Curator.io Feed div goes here, inside the narrow sidebar -->
+                    <div id="curator-feed-default-feed-layout"><a href="https://curator.io" target="_blank" class="crt-logo crt-tag">Powered by Curator.io</a></div>                         
+                </div>
+            </div>
+        </div>
+        <!--content end-->
+        <!--Popup window-->
+      <div id="popupContact"> <a id="popupContactClose" href="#"><img src="img/window-close.png" /></a>
+      <h3>Service Times &amp; Directions</h3>
+      <div class="col left">
+        <h4></h4>
+        <p><strong>Saturday Evening :</strong> 5:00 PM</p>
+         
+      </div>
+      <div class="col left"> <a href="https://goo.gl/maps/TtGiqa2q7N12" target="_blank"><img src="img/map.jpg" alt="map" class="thumb-left" /></a> <a href="https://goo.gl/maps/TtGiqa2q7N12" target="_blank" >View larger map</a>
+        <address>
+        8621 S Interstate 8 Frontage Rd<br/>
+        Yuma, AZ 85365 <br/>
+        PP: (928)503-4018
+        </address>
+      </div>
+    </div>
+    <div id="backgroundPopup"></div>
+  </div>
+    <!--main end-->
+</div>
+<!--wrapper end-->
+<div class="clear"></div>
+<div id="footer-wrapper">
+    <div id="footer">
+        <div class="left-col left">
+            <div class="footer-col left">
+                <h6>&nbsp;</h6>
+            </div>
+            <div class="footer-col left">
+                <h6>&nbsp;</h6>
+            </div>
+            <div class="footer-col left">
+                <h6>&nbsp;</h6>
+            </div>
+            <div class="footer-col left">
+                <h6>&nbsp;</h6>
+            </div>
+        </div>
+        <div class="right-col left"> <span class="auto-style4"><strong>Saint Paisios Orthodox Church</strong>
+            </span>             <address>
+            8621 S Interstate 8 Frontage Rd<br/>
+            Yuma, AZ 85365<br/>
+            PP: (928)503-4018<br/>
+            </address>
+        </div>
+        <div class="clear"></div>
+    </div>
+</div>
+<script type="text/javascript"> Cufon.now(); </script>
+</body>
+</html>

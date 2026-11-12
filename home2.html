@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Saint Paisios Orthodox Church  |Antiochian Orthodox Mission</title>
+<title>Saint Paisios Orthodox Church | Antiochian Orthodox Mission</title>
 <!-- Global Site Tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-107042131-1"></script>
 <script>
@@ -16,12 +16,11 @@
 <link rel="stylesheet" type="text/css" href="css/reset.css" />
 <link rel="stylesheet" type="text/css" href="css/style.css" />
 <link rel="stylesheet" type="text/css" href="css/superfish.css" media="screen"/>
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
 <!--PNGfix-->
 <script type="text/javascript" src="js/jquery.pngFix.pack.js"></script>
 <script type="text/javascript"> 
-    $(document).ready(function(){ 
-        $(document).pngFix(); 
+    $(document).ready(function(){$(document).pngFix(); 
     }); 
 </script>
 <!--Superfish nav bar-->
@@ -37,10 +36,7 @@
 <script type="text/javascript" src="js/easySlider1.5.js"></script>
 <script type="text/javascript" charset="utf-8">
 // <![CDATA[
-$(document).ready(function(){	
-	$("#slider").easySlider({
-		/*controlsBefore:	'<p id="controls">',
-		controlsAfter:	'</p>',*/
+$(document).ready(function(){$("#slider").easySlider({
 		auto: true, 
 		continuous: true
 	});	
@@ -99,41 +95,54 @@ $(document).ready(function() {
 .auto-style7 {
 	font-size: medium;
 }
+/* Fixed search alignment to right of nav menu */
+#nav {
+    position: relative;
+}
+.search {
+    position: absolute;
+    top: 8px;
+    right: 15px;
+    width: 220px;
+}
+.search-field {
+    vertical-align: middle;
+    width: 150px;
+    padding: 3px;
+}
+.search-submit {
+    vertical-align: middle;
+    margin-left: 5px;
+}
 </style>
 </head>
 <body>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.7&appId=208110709548956";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
 <div id="wrapper">
   <div id="main">
     <div id="header">
       <div id="logo" style="width: 456px"><img src="img/logo.png" width="370" height="45" alt="logo" longdesc="site logo" /></div>
-      <ul id="menu"><li><a href="#">Quick Links</a>
+      <ul id="menu">
+        <li><a href="#">Quick Links</a>
           <ul>
             <li> <a href="contact.html">Contact</a> </li>
-                      </ul>
+          </ul>
         </li>
         <li><a href="#" id="button">Service Times</a> </li>
       </ul>
       <div id="nav">
         <ul class="sf-menu">
-          <li > <a href="index.html">Home</a> </li>
-                 <li> <a href="home2.html">Who We Are</a> </li>
+          <li> <a href="index.html">Home</a> </li>
+          <li class="current"> <a href="home2.html">Who We Are</a> </li>
           <li> <a href="video.html">Videos</a></li>
-          <li>
-            <li> <a href="gallery.html">Gallery</a></li>
+          <li> <a href="gallery.html">Gallery</a></li>
           <li> <a href="calendar.html">Daily Readings/Calendar</a> </li>
           <li> <a href="contact.html">Contact</a> </li>
         </ul>
         <div class="search">
-          <form action="register.php" method="post">
-            <input name="text" type="text"  class="search-field" alt="Search site:" />
-            <input name="submit" type="image" class="search-submit" value="search" src="img/search.png" />
+          <form action="https://www.google.com/search" method="get" target="_blank">
+            <input type="hidden" name="as_sitesearch" value="saintpaisios.net" />
+            <input name="q" type="text" class="search-field" placeholder="Search site..." />
+            <input type="image" class="search-submit" src="img/search.png" alt="Search" />
           </form>
         </div>
       </div>
@@ -172,17 +181,17 @@ $(document).ready(function() {
                 <p class="auto-style6">We are Orthodox but not to be confused with Jewish Orthodox. Orthodox is the combination of two words. Ortho which means straight, correct, true and doxa which means worship or praise. Orthodox is often used to speak of right teaching or right doctrine. While many have come along over the centuries and have added to or taken away from the faith, we maintain the Apostolic Faith without adding to it, nor taking from it. Orthodox also speaks to our worship, which is a Biblical worship rooted in the Old Testament, and fulfilled in the New Testament as the Heavenly worship mentioned in such books as Hebrews and Revelation. Worship and prayer could be called the heart and soul of the Orthodox Church. </p>
                 <p class="auto-style6">To sum this all up we are, quite simply, the Church of the Apostles, the New Testament Church who not only remains faithful to Her roots, but has continued uninterrupted for 2,000 years</p>
                 <p>&nbsp;</p>
-</li>
+              </li>
             </ul>
           </div>
           <div id="tab2" class="tab_content">
             <h4>&nbsp;</h4>
-</div>
+          </div>
           <div id="tab3" class="tab_content">
             <ul class="tab-post">
               <li>
                 <p>&nbsp;</p>
-</li>
+              </li>
             </ul>
           </div>
           
@@ -202,66 +211,9 @@ $(document).ready(function() {
         </div>
         <div id="sidebar">
           <div class="divider"></div>
-          <!--<h3>Connect with Us</h3>
-                    <ul class="social">
-                        <li><a href="#" id="facebook">Become a fan on Facebook</a></li>
-                        <li><a href="#" id="twitter">Follow us on Twitter</a></li>
-                        <li><a href="#" id="flickr">View our photos on Flickr</a></li>
-                        <li><a href="#" id="youtube">Watch us on Youtube</a></li>
-                    </ul>
-                    <div class="divider"></div>-->
           <h3 class="replace">Our Church on Facebook</h3>
-          <p class="twitter-feed">Check out our Facbook page <a href="https://www.facebook.com/StPaisios" target="_blank">https://goo.gl/vTfUoA</a></p>
+          <p class="twitter-feed">Check out our Facebook page <a href="https://www.facebook.com/StPaisios" target="_blank">https://goo.gl/vTfUoA</a></p>
           <div class="divider"></div>
-          <div class="fb-page" data-href="https://www.facebook.com/StPaisios/" data-tabs="timeline" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
-            <blockquote cite="https://www.facebook.com/StPaisios/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/StPaisios/">Saint Paisios Orthodox Church</a></blockquote>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!--content end--> 
-    <!--Popup window-->
-    <div id="popupContact"> <a id="popupContactClose" href="#"><img src="img/window-close.png" /></a>
-      <h3>Service Times &amp; Directions</h3>
-      <div class="col left">
-        <h4></h4>
-        <p><strong>Saturday Evening :</strong> 5:00 PM</p>
-         
-      </div>
-      <div class="col left"> <a href="https://goo.gl/maps/TtGiqa2q7N12" target="_blank"><img src="img/map.jpg" alt="map" class="thumb-left" /></a> <a href="https://goo.gl/maps/TtGiqa2q7N12" target="_blank" >View larger map</a>
-        <address>
-        8621 S Interstate 8 Frontage Rd</br>
-        Yuma, AZ 85365 </br>
-        PP: (928)503-4018
-        </address>
-      </div>
-    </div>
-    <div id="backgroundPopup"></div>
-  </div>
-  <!--main end--> 
-</div>
-<!--wrapper end-->
-<div class="clear"></div>
-<div id="footer-wrapper">
-<div id="footer">
-  <div class="left-col left">
-    <div class="footer-col left">
-      <h6>&nbsp;</h6>
-    </div>
-    <div class="footer-col left">
-      <h6>&nbsp;</h6>
-    </div>
-    <div class="footer-col left"> </div>
-    <div class="right-col left"> <span class="auto-style4"><strong>Saint Paisios Orthodox Church</strong> </span>
-      <address>
-      8621 S Interstate 8 Frontage Rd<br/>
-      Yuma, AZ 85365<br/>
-      PP: (928)503-4018<br/>
-      </address>
-    </div>
-    <div class="clear"></div>
-  </div>
-</div>
-<script type="text/javascript"> Cufon.now(); </script>
-</body>
-</html>
+          
+          <!-- Curator.io Feed div goes here, inside the narrow sidebar -->
+          <div id="curator-feed-default-feed-layout
